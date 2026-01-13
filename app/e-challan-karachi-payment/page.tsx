@@ -45,15 +45,15 @@ export default function KarachiEChallanPage() {
           {/* Official Link Button */}
           <div className="text-center mb-8">
             <a
-              href="https://sindhpolice.gov.pk/e-challan/"
+              href="https://www.sindhpolice.gov.pk/challan-check"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-lg transition-colors shadow-lg text-lg"
             >
-              Visit Official Sindh Police E-Challan Portal →
+              Check Sindh / Karachi E-Challan Now →
             </a>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
-              You will be redirected to the official government website
+              Official Sindh Police E-Challan Verification Portal
             </p>
           </div>
 

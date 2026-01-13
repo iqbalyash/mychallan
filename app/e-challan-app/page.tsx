@@ -27,9 +27,31 @@ export default function EChallanAppPage() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             E-Challan App (Verify, Generate PSID and Pay Your Fine)
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400" dir="rtl">
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6" dir="rtl">
             ای چالان ایپ - چالان چیک کریں، PSID بنائیں اور جرمانہ ادا کریں
           </p>
+          
+          {/* Download Button */}
+          <div className="flex flex-col items-center gap-4 bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-8 shadow-2xl mb-8">
+            <div className="text-4xl mb-2">📱</div>
+            <h2 className="text-2xl font-bold text-white mb-2">
+              Download E-Challan App Now
+            </h2>
+            <p className="text-green-100 mb-4 text-center">
+              Check traffic challans on your mobile device
+            </p>
+            <a
+              href="https://dl.mychallan.pk/file/SoftBinArchive/e-challan-check.apk"
+              download
+              className="bg-white text-green-600 hover:bg-green-50 px-10 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg flex items-center gap-2"
+            >
+              <span>⬇️</span>
+              <span>Download APK (Android)</span>
+            </a>
+            <p className="text-xs text-green-100 mt-2">
+              File: e-challan-check.apk | For Android devices
+            </p>
+          </div>
         </div>
 
         {/* Introduction Section */}

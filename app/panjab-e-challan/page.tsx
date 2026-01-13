@@ -50,10 +50,10 @@ export default function PunjabEChallanPage() {
               rel="noopener noreferrer"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-lg transition-colors shadow-lg text-lg"
             >
-              Visit Official PSCA E-Challan Portal →
+              Check Punjab / Lahore E-Challan Now →
             </a>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
-              You will be redirected to the official government website
+              Official PSCA E-Challan Verification Portal
             </p>
           </div>
 

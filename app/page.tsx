@@ -216,6 +216,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* E-CHALLAN APP DOWNLOAD SECTION */}
+      <section className="py-12 px-4 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 sm:p-12">
+            <div className="text-5xl mb-4">📱</div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              E-Challan App Download
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+              Download our mobile app to check traffic challans on the go
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-8" dir="rtl">
+              موبائل ایپ ڈاؤن لوڈ کریں اور اپنے ٹریفک چالان چیک کریں
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/e-challan-app"
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg flex items-center justify-center gap-2"
+              >
+                <span>📱</span>
+                <span>View App Details & Download</span>
+              </Link>
+            </div>
+            
+            <div className="mt-6 flex items-center justify-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+              <span className="flex items-center gap-1">
+                <span>✓</span>
+                <span>Free Download</span>
+              </span>
+              <span className="flex items-center gap-1">
+                <span>✓</span>
+                <span>Android APK</span>
+              </span>
+              <span className="flex items-center gap-1">
+                <span>✓</span>
+                <span>Fast & Secure</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* HOMEPAGE CONTENT START */}
       <section className="py-12 px-4 bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto">

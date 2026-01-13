@@ -62,15 +62,15 @@ export default function IslamabadEChallanPage() {
           {/* Official Link Button */}
           <div className="text-center mb-8">
             <a
-              href="https://www.islamabadpolice.gov.pk/itp/e-services"
+              href="https://traffic.islamabadpolice.gov.pk/Echallan"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-lg transition-colors shadow-lg text-lg"
             >
-              Visit Islamabad Traffic Police E-Services →
+              Check Islamabad E-Challan Now →
             </a>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
-              You will be redirected to the official ITP website
+              Official Islamabad Traffic Police E-Challan Portal
             </p>
           </div>
 
