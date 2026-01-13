@@ -1,10 +1,65 @@
 # robots.txt for MyChallan.pk
+# Optimized for maximum SEO and AI crawler access
 
+# Allow all search engines and AI crawlers
 User-agent: *
+Allow: /
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# AI and LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
 Allow: /
 
 # Sitemap location
 Sitemap: https://mychallan.pk/sitemap.xml
 
-# Crawl-delay
-Crawl-delay: 1
+# Crawl-delay (minimal for fast indexing)
+Crawl-delay: 0

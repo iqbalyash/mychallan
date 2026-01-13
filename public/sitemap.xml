@@ -1,38 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mychallan.pk/</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/" />
   </url>
   <url>
     <loc>https://mychallan.pk/violations-and-codes/</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/violations-and-codes/" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/violations-and-codes/" />
   </url>
   <url>
     <loc>https://mychallan.pk/panjab-e-challan/</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/panjab-e-challan/" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/panjab-e-challan/" />
   </url>
   <url>
     <loc>https://mychallan.pk/e-challan-karachi-payment/</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/e-challan-karachi-payment/" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/e-challan-karachi-payment/" />
   </url>
   <url>
     <loc>https://mychallan.pk/islamabad-e-challan/</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/islamabad-e-challan/" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/islamabad-e-challan/" />
   </url>
   <url>
     <loc>https://mychallan.pk/e-challan-app/</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/e-challan-app/" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/e-challan-app/" />
   </url>
   <url>
     <loc>https://mychallan.pk/about-us/</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/about-us/" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/about-us/" />
   </url>
 </urlset>

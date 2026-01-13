@@ -46,25 +46,74 @@ export default function Home() {
     }
   }, [violationSearch, violations]);
 
+  // Add JSON-LD for homepage
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "E Challan Check Pakistan – Online Challan Check & Payment",
+      "description": "Check e challan online in Pakistan by vehicle number or CNIC. Verify traffic challans for Islamabad, Lahore, Karachi.",
+      "url": "https://mychallan.pk",
+      "inLanguage": ["en-PK", "ur-PK"],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mychallan.pk"
+        }]
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How to check e challan online in Pakistan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can check e challan online in Pakistan by visiting official portals: echallan.psca.gop.pk for Punjab, traffic.islamabadpolice.gov.pk for Islamabad, and sindhpolice.gov.pk/challan-check for Sindh/Karachi. Enter your vehicle number or CNIC to verify challans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I pay traffic challan online in Pakistan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, you can pay traffic challans online through official government portals. Each province has its own payment system. Visit the respective traffic police website for your city to make online payments."
+            }
+          }
+        ]
+      }
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
-    <main>
+    <>
       {/* E-CHALLAN SEARCH SECTION - VERY TOP */}
-      <section className="bg-blue-700 text-white py-12 px-4">
+      <section className="bg-blue-700 text-white py-12 px-4" itemScope itemType="https://schema.org/Service">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-6" itemProp="name">
             E-Challan Online Check (Pakistan)
           </h1>
           
           <button
             onClick={() => setShowCityOptions(!showCityOptions)}
             className="bg-white text-blue-700 hover:bg-blue-50 px-10 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+            aria-label="Search E-Challan options"
           >
             Search E-Challan
           </button>
 
           {/* City Options - Simple Expandable UI */}
           {showCityOptions && (
-            <div className="mt-6 bg-white rounded-lg shadow-xl p-6 text-left">
+            <nav className="mt-6 bg-white rounded-lg shadow-xl p-6 text-left" aria-label="City selection">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Select Your City:
               </h3>
@@ -94,13 +143,13 @@ export default function Home() {
                   </span>
                 </Link>
               </div>
-            </div>
+            </nav>
           )}
         </div>
       </section>
 
       {/* VIOLATION SEARCH TOOL - CLIENT-SIDE SEARCH */}
-      <section className="py-12 px-4 bg-gray-50 dark:bg-gray-900">
+      <section className="py-12 px-4 bg-gray-50 dark:bg-gray-900" itemScope itemType="https://schema.org/SearchAction">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8">
             <div className="flex justify-between items-start mb-4">
@@ -114,7 +163,7 @@ export default function Home() {
               </div>
               
               {/* Language Toggle */}
-              <div className="flex gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+              <div className="flex gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1" role="group" aria-label="Language selection">
                 <button
                   onClick={() => setLanguage("en")}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -122,6 +171,7 @@ export default function Home() {
                       ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                   }`}
+                  aria-pressed={language === "en"}
                 >
                   English
                 </button>
@@ -132,6 +182,7 @@ export default function Home() {
                       ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                   }`}
+                  aria-pressed={language === "ur"}
                 >
                   اردو
                 </button>
@@ -146,6 +197,7 @@ export default function Home() {
                 onChange={(e) => setViolationSearch(e.target.value)}
                 placeholder="Search violations (e.g., speeding, 001, helmet)"
                 className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                aria-label="Search violation codes"
               />
             </div>
 
@@ -153,9 +205,11 @@ export default function Home() {
             <div className="space-y-4 max-h-96 overflow-y-auto">
               {filteredViolations.length > 0 ? (
                 filteredViolations.map((violation, index) => (
-                  <div
+                  <article
                     key={`${violation.code}-${index}`}
                     className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
+                    itemScope
+                    itemType="https://schema.org/Thing"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                       <div className="flex items-center gap-2 flex-1">
@@ -165,7 +219,7 @@ export default function Home() {
                         <div className="flex-1">
                           {language === "en" ? (
                             <>
-                              <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
+                              <h3 className="font-semibold text-gray-900 dark:text-white text-sm" itemProp="name">
                                 {violation.en}
                               </h3>
                               <p className="text-gray-600 dark:text-gray-400 text-xs mt-1" dir="rtl">
@@ -174,7 +228,7 @@ export default function Home() {
                             </>
                           ) : (
                             <>
-                              <h3 className="font-semibold text-gray-900 dark:text-white text-sm" dir="rtl">
+                              <h3 className="font-semibold text-gray-900 dark:text-white text-sm" dir="rtl" itemProp="name">
                                 {violation.ur}
                               </h3>
                               <p className="text-gray-600 dark:text-gray-400 text-xs mt-1">
@@ -184,7 +238,9 @@ export default function Home() {
                           )}
                         </div>
                       </div>
-                      <span className="text-red-600 dark:text-red-400 font-semibold text-sm whitespace-nowrap">
+                      <span className="text-red-600 dark:text-red-400 font-semibold text-sm whitespace-nowrap" itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                        <meta itemProp="price" content={violation.fine.toString()} />
+                        <meta itemProp="priceCurrency" content="PKR" />
                         Rs. {violation.fine.toLocaleString()}
                       </span>
                     </div>
@@ -198,7 +254,7 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </article>
                 ))
               ) : (
                 <div className="text-center py-8 text-gray-500 dark:text-gray-400">
@@ -311,11 +367,11 @@ export default function Home() {
 
       {/* SEO CONTENT SECTION - BILINGUAL */}
       <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto">
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8">
             {/* Language Toggle */}
             <div className="flex justify-end mb-6">
-              <div className="flex gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+              <div className="flex gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1" role="group" aria-label="Content language selection">
                 <button
                   onClick={() => setContentLanguage("en")}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -323,6 +379,7 @@ export default function Home() {
                       ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                   }`}
+                  aria-pressed={contentLanguage === "en"}
                 >
                   English
                 </button>
@@ -333,6 +390,7 @@ export default function Home() {
                       ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                   }`}
+                  aria-pressed={contentLanguage === "ur"}
                 >
                   اردو
                 </button>
@@ -341,12 +399,12 @@ export default function Home() {
 
             {/* English Content */}
             {contentLanguage === "en" ? (
-              <div className="prose prose-lg dark:prose-invert max-w-none">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              <article className="prose prose-lg dark:prose-invert max-w-none" itemScope itemType="https://schema.org/Article">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6" itemProp="headline">
                   E Challan Check Pakistan – Online Challan Check & Payment
                 </h2>
                 
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" itemProp="description">
                   MyChallan.pk helps users across Pakistan to check e challan online easily using official sources.
                   You can verify your traffic challan by vehicle number or CNIC and find correct guidance for online challan payment.
                 </p>
@@ -384,15 +442,15 @@ export default function Home() {
                   <li>Understand traffic rules</li>
                   <li>Avoid future e challans</li>
                 </ul>
-              </div>
+              </article>
             ) : (
               /* Urdu Content */
-              <div className="prose prose-lg dark:prose-invert max-w-none" dir="rtl">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-right">
+              <article className="prose prose-lg dark:prose-invert max-w-none" dir="rtl" itemScope itemType="https://schema.org/Article">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-right" itemProp="headline">
                   ای چالان چیک پاکستان – آن لائن چالان چیک اور ادائیگی
                 </h2>
                 
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-right">
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-right" itemProp="description">
                   MyChallan.pk پورے پاکستان میں صارفین کو ای چالان آن لائن چیک کرنے کی درست اور آسان رہنمائی فراہم کرتا ہے۔
                   آپ گاڑی نمبر یا CNIC کے ذریعے ٹریفک چالان کی معلومات حاصل کر سکتے ہیں اور آن لائن چالان ادائیگی کے طریقے جان سکتے ہیں۔
                 </p>
@@ -417,8 +475,8 @@ export default function Home() {
                   </p>
                   <p className="text-gray-700 dark:text-gray-300">
                     ہم کوئی ذاتی معلومات محفوظ نہیں کرتے۔ تمام چالان چیک اور ادائیگی صرف سرکاری ویب سائٹس کے ذریعے ہوتی ہے۔
-                  </p>
-                </div>
+        </p>
+      </div>
 
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 mt-8 text-right">
                   اوپر دیے گئے ٹولز استعمال کر کے آپ:
@@ -430,11 +488,11 @@ export default function Home() {
                   <li>ٹریفک قوانین سمجھ سکتے ہیں</li>
                   <li>مستقبل میں ای چالان سے بچ سکتے ہیں</li>
                 </ul>
-              </div>
+              </article>
             )}
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

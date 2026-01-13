@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
   
   // Trailing slash for better static hosting compatibility
   trailingSlash: true,
+  
+  // Performance optimizations
+  compress: true,
+  
+  // Note: Headers should be configured at hosting level (Netlify, Vercel, etc.)
+  // For static export, headers are not applied by Next.js
 };
 
 export default nextConfig;
