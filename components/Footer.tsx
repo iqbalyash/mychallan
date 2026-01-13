@@ -6,17 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Section */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-              MyChallan.pk
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Your trusted source for e-challan information in Pakistan. Check and verify traffic challans online.
-            </p>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -25,26 +15,26 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/"
+                  href="/about-us"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  Home
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/check-challan"
+                  href="/violations-and-codes"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  Check Challan Online
+                  Violations & Codes
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/guide"
+                  href="/e-challan-app"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  Guide (Urdu)
+                  E-Challan App
                 </Link>
               </li>
             </ul>
@@ -55,15 +45,16 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               Disclaimer
             </h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400">
-              This is an informational website. For official challan verification and payment, please visit the official government portals.
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              This is an informational website. We are not affiliated with any government authority.
             </p>
           </div>
         </div>
 
+        {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
           <p className="text-center text-sm text-gray-600 dark:text-gray-400">
-            &copy; {currentYear} MyChallan.pk. All rights reserved. Informational purposes only.
+            &copy; {currentYear} MyChallan.pk. All rights reserved.
           </p>
         </div>
       </div>

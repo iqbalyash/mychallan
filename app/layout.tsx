@@ -3,20 +3,28 @@ import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-// Force SSR for all pages
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-
 export const metadata: Metadata = {
-  title: "E Challan Check Pakistan – Online Challan Check & Payment | MyChallan.pk",
+  title: {
+    default: "E Challan Check Pakistan – Online Challan Check & Payment | MyChallan.pk",
+    template: "%s | MyChallan.pk",
+  },
   description: "Check e challan online in Pakistan by vehicle number or CNIC. Urdu informational guide with official links.",
-  keywords: ["e challan", "challan check", "Pakistan challan", "traffic challan", "CNIC challan", "vehicle challan"],
+  keywords: "e challan pakistan, challan check, traffic challan online, CNIC challan, vehicle challan, traffic violations pakistan",
   authors: [{ name: "MyChallan.pk" }],
   creator: "MyChallan.pk",
   publisher: "MyChallan.pk",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://mychallan.pk",
   },
   openGraph: {
     type: "website",
@@ -25,6 +33,14 @@ export const metadata: Metadata = {
     siteName: "MyChallan.pk",
     title: "E Challan Check Pakistan – Online Challan Check & Payment",
     description: "Check e challan online in Pakistan by vehicle number or CNIC. Urdu informational guide with official links.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "E Challan Check Pakistan – Online Challan Check & Payment",
+    description: "Check e challan online in Pakistan by vehicle number or CNIC.",
+  },
+  verification: {
+    google: "google-site-verification-code",
   },
 };
 

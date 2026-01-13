@@ -1,0 +1,10 @@
+# robots.txt for MyChallan.pk
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mychallan.pk/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

@@ -24,13 +24,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             <Link
-              href="/punjab-e-challan"
+              href="/panjab-e-challan"
               className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               Punjab E-Challan
             </Link>
             <Link
-              href="/karachi-e-challan"
+              href="/e-challan-karachi-payment"
               className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               Karachi E-Challan
@@ -48,7 +48,7 @@ export default function Header() {
               E-Challan App
             </Link>
             <Link
-              href="/violations-codes"
+              href="/violations-and-codes"
               className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               Violations & Codes
@@ -84,13 +84,13 @@ export default function Header() {
           <nav className="lg:hidden py-4 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col space-y-3">
               <Link
-                href="/punjab-e-challan"
+                href="/panjab-e-challan"
                 className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
               >
                 Punjab E-Challan
               </Link>
               <Link
-                href="/karachi-e-challan"
+                href="/e-challan-karachi-payment"
                 className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
               >
                 Karachi E-Challan
@@ -108,7 +108,7 @@ export default function Header() {
                 E-Challan App
               </Link>
               <Link
-                href="/violations-codes"
+                href="/violations-and-codes"
                 className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
               >
                 Violations & Codes

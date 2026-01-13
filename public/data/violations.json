@@ -1,0 +1,122 @@
+[
+  {
+    "code": "001",
+    "name": "Over Speeding",
+    "description": "Exceeding the prescribed speed limit",
+    "fine": "Rs. 1,000"
+  },
+  {
+    "code": "002",
+    "name": "Driving Without License",
+    "description": "Operating a vehicle without a valid driving license",
+    "fine": "Rs. 2,000"
+  },
+  {
+    "code": "003",
+    "name": "Red Light Violation",
+    "description": "Crossing a traffic signal on red light",
+    "fine": "Rs. 1,000"
+  },
+  {
+    "code": "004",
+    "name": "Wrong Way Driving",
+    "description": "Driving vehicle on wrong side or in wrong direction",
+    "fine": "Rs. 1,500"
+  },
+  {
+    "code": "005",
+    "name": "No Seat Belt",
+    "description": "Not wearing seat belt while driving",
+    "fine": "Rs. 500"
+  },
+  {
+    "code": "006",
+    "name": "Using Mobile While Driving",
+    "description": "Using mobile phone while driving without hands-free",
+    "fine": "Rs. 1,000"
+  },
+  {
+    "code": "007",
+    "name": "No Helmet",
+    "description": "Riding motorcycle without helmet",
+    "fine": "Rs. 500"
+  },
+  {
+    "code": "008",
+    "name": "Overloading",
+    "description": "Carrying passengers or load beyond permitted limit",
+    "fine": "Rs. 2,000"
+  },
+  {
+    "code": "009",
+    "name": "Expired Registration",
+    "description": "Vehicle registration expired",
+    "fine": "Rs. 1,000"
+  },
+  {
+    "code": "010",
+    "name": "No Number Plate",
+    "description": "Missing or defaced number plate",
+    "fine": "Rs. 1,500"
+  },
+  {
+    "code": "011",
+    "name": "Reckless Driving",
+    "description": "Driving in rash or negligent manner",
+    "fine": "Rs. 2,000"
+  },
+  {
+    "code": "012",
+    "name": "Illegal Parking",
+    "description": "Parking in no-parking zone or blocking traffic",
+    "fine": "Rs. 500"
+  },
+  {
+    "code": "013",
+    "name": "No Vehicle Fitness Certificate",
+    "description": "Operating vehicle without valid fitness certificate",
+    "fine": "Rs. 1,500"
+  },
+  {
+    "code": "014",
+    "name": "Triple Riding",
+    "description": "More than two persons on a motorcycle",
+    "fine": "Rs. 500"
+  },
+  {
+    "code": "015",
+    "name": "Tinted Glass",
+    "description": "Using illegal tinted glass or sun film",
+    "fine": "Rs. 1,000"
+  },
+  {
+    "code": "016",
+    "name": "Smoke Emission",
+    "description": "Emitting excessive smoke from vehicle",
+    "fine": "Rs. 1,000"
+  },
+  {
+    "code": "017",
+    "name": "Lane Violation",
+    "description": "Not following proper lane discipline",
+    "fine": "Rs. 500"
+  },
+  {
+    "code": "018",
+    "name": "No Insurance",
+    "description": "Vehicle without valid insurance",
+    "fine": "Rs. 2,000"
+  },
+  {
+    "code": "019",
+    "name": "Modified Silencer",
+    "description": "Using modified or noisy silencer",
+    "fine": "Rs. 1,000"
+  },
+  {
+    "code": "020",
+    "name": "Underage Driving",
+    "description": "Person below legal age operating vehicle",
+    "fine": "Rs. 3,000"
+  }
+]
