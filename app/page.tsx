@@ -17,6 +17,7 @@ export default function Home() {
   const [violationSearch, setViolationSearch] = useState("");
   const [filteredViolations, setFilteredViolations] = useState<Violation[]>([]);
   const [language, setLanguage] = useState<"en" | "ur">("en");
+  const [contentLanguage, setContentLanguage] = useState<"en" | "ur">("en");
 
   // Load violations data
   useEffect(() => {
@@ -308,22 +309,130 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. HOMEPAGE INFORMATIONAL CONTENT */}
-      <section className="py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* 
-            ============================================
-            HOMEPAGE INFORMATIONAL CONTENT SECTION
-            ============================================
-            Content will be inserted here by the user.
-            This section is ready for custom content including:
-            - Information about e-challans in Pakistan
-            - How-to guides
-            - FAQs
-            - Official links
-            - Any other relevant information
-            ============================================
-          */}
+      {/* SEO CONTENT SECTION - BILINGUAL */}
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8">
+            {/* Language Toggle */}
+            <div className="flex justify-end mb-6">
+              <div className="flex gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+                <button
+                  onClick={() => setContentLanguage("en")}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    contentLanguage === "en"
+                      ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => setContentLanguage("ur")}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    contentLanguage === "ur"
+                      ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  اردو
+                </button>
+              </div>
+            </div>
+
+            {/* English Content */}
+            {contentLanguage === "en" ? (
+              <div className="prose prose-lg dark:prose-invert max-w-none">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                  E Challan Check Pakistan – Online Challan Check & Payment
+                </h2>
+                
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                  MyChallan.pk helps users across Pakistan to check e challan online easily using official sources.
+                  You can verify your traffic challan by vehicle number or CNIC and find correct guidance for online challan payment.
+                </p>
+
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 mt-8">
+                  Our website provides updated information for:
+                </h3>
+                
+                <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300 mb-8">
+                  <li>Islamabad e challan check</li>
+                  <li>Lahore / Punjab e challan</li>
+                  <li>Karachi / Sindh e challan</li>
+                  <li>Bike challan check</li>
+                  <li>Car challan check</li>
+                  <li>E challan app guidance</li>
+                  <li>PSID generation and payment process</li>
+                </ul>
+
+                <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold mb-2">
+                    ⚠️ Important Notice:
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    We do not collect any personal data. All challan checks and payments are done through official traffic police portals only.
+                  </p>
+                </div>
+
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 mt-8">
+                  Use the search tools above to:
+                </h3>
+                
+                <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+                  <li>Find challan violation codes</li>
+                  <li>Check fine amounts</li>
+                  <li>Understand traffic rules</li>
+                  <li>Avoid future e challans</li>
+                </ul>
+              </div>
+            ) : (
+              /* Urdu Content */
+              <div className="prose prose-lg dark:prose-invert max-w-none" dir="rtl">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-right">
+                  ای چالان چیک پاکستان – آن لائن چالان چیک اور ادائیگی
+                </h2>
+                
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-right">
+                  MyChallan.pk پورے پاکستان میں صارفین کو ای چالان آن لائن چیک کرنے کی درست اور آسان رہنمائی فراہم کرتا ہے۔
+                  آپ گاڑی نمبر یا CNIC کے ذریعے ٹریفک چالان کی معلومات حاصل کر سکتے ہیں اور آن لائن چالان ادائیگی کے طریقے جان سکتے ہیں۔
+                </p>
+
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 mt-8 text-right">
+                  ہم درج ذیل شہروں کے لیے معلومات فراہم کرتے ہیں:
+                </h3>
+                
+                <ul className="list-disc pr-6 space-y-3 text-gray-700 dark:text-gray-300 mb-8 text-right">
+                  <li>اسلام آباد ای چالان چیک</li>
+                  <li>لاہور / پنجاب ای چالان</li>
+                  <li>کراچی / سندھ ای چالان</li>
+                  <li>بائیک چالان چیک</li>
+                  <li>کار ای چالان چیک</li>
+                  <li>ای چالان ایپ رہنمائی</li>
+                  <li>PSID جنریشن اور ادائیگی کا طریقہ</li>
+                </ul>
+
+                <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6 text-right">
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold mb-2">
+                    ⚠️ اہم نوٹس:
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    ہم کوئی ذاتی معلومات محفوظ نہیں کرتے۔ تمام چالان چیک اور ادائیگی صرف سرکاری ویب سائٹس کے ذریعے ہوتی ہے۔
+                  </p>
+                </div>
+
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 mt-8 text-right">
+                  اوپر دیے گئے ٹولز استعمال کر کے آپ:
+                </h3>
+                
+                <ul className="list-disc pr-6 space-y-3 text-gray-700 dark:text-gray-300 text-right">
+                  <li>خلاف ورزی کے کوڈ تلاش کر سکتے ہیں</li>
+                  <li>جرمانے کی رقم معلوم کر سکتے ہیں</li>
+                  <li>ٹریفک قوانین سمجھ سکتے ہیں</li>
+                  <li>مستقبل میں ای چالان سے بچ سکتے ہیں</li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </section>
     </main>
