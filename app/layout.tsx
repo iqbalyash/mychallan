@@ -76,7 +76,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" content="#2563eb" />
         <meta name="color-scheme" content="light dark" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-icon.svg" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="canonical" href="https://mychallan.pk" />
         <link rel="alternate" hrefLang="en-PK" href="https://mychallan.pk" />
         <link rel="alternate" hrefLang="ur-PK" href="https://mychallan.pk" />
