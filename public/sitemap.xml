@@ -56,4 +56,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/about-us/" />
     <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/about-us/" />
   </url>
+  <url>
+    <loc>https://mychallan.pk/updates/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mychallan.pk/updates/" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mychallan.pk/updates/" />
+  </url>
 </urlset>

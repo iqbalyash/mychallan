@@ -53,6 +53,12 @@ export default function Header() {
             >
               Violations & Codes
             </Link>
+            <Link
+              href="/updates"
+              className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              Updates & News
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -112,6 +118,12 @@ export default function Header() {
                 className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
               >
                 Violations & Codes
+              </Link>
+              <Link
+                href="/updates"
+                className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+              >
+                Updates & News
               </Link>
             </div>
           </nav>
