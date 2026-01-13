@@ -1,122 +1,93 @@
 [
-  {
-    "code": "001",
-    "name": "Over Speeding",
-    "description": "Exceeding the prescribed speed limit",
-    "fine": "Rs. 1,000"
-  },
-  {
-    "code": "002",
-    "name": "Driving Without License",
-    "description": "Operating a vehicle without a valid driving license",
-    "fine": "Rs. 2,000"
-  },
-  {
-    "code": "003",
-    "name": "Red Light Violation",
-    "description": "Crossing a traffic signal on red light",
-    "fine": "Rs. 1,000"
-  },
-  {
-    "code": "004",
-    "name": "Wrong Way Driving",
-    "description": "Driving vehicle on wrong side or in wrong direction",
-    "fine": "Rs. 1,500"
-  },
-  {
-    "code": "005",
-    "name": "No Seat Belt",
-    "description": "Not wearing seat belt while driving",
-    "fine": "Rs. 500"
-  },
-  {
-    "code": "006",
-    "name": "Using Mobile While Driving",
-    "description": "Using mobile phone while driving without hands-free",
-    "fine": "Rs. 1,000"
-  },
-  {
-    "code": "007",
-    "name": "No Helmet",
-    "description": "Riding motorcycle without helmet",
-    "fine": "Rs. 500"
-  },
-  {
-    "code": "008",
-    "name": "Overloading",
-    "description": "Carrying passengers or load beyond permitted limit",
-    "fine": "Rs. 2,000"
-  },
-  {
-    "code": "009",
-    "name": "Expired Registration",
-    "description": "Vehicle registration expired",
-    "fine": "Rs. 1,000"
-  },
-  {
-    "code": "010",
-    "name": "No Number Plate",
-    "description": "Missing or defaced number plate",
-    "fine": "Rs. 1,500"
-  },
-  {
-    "code": "011",
-    "name": "Reckless Driving",
-    "description": "Driving in rash or negligent manner",
-    "fine": "Rs. 2,000"
-  },
-  {
-    "code": "012",
-    "name": "Illegal Parking",
-    "description": "Parking in no-parking zone or blocking traffic",
-    "fine": "Rs. 500"
-  },
-  {
-    "code": "013",
-    "name": "No Vehicle Fitness Certificate",
-    "description": "Operating vehicle without valid fitness certificate",
-    "fine": "Rs. 1,500"
-  },
-  {
-    "code": "014",
-    "name": "Triple Riding",
-    "description": "More than two persons on a motorcycle",
-    "fine": "Rs. 500"
-  },
-  {
-    "code": "015",
-    "name": "Tinted Glass",
-    "description": "Using illegal tinted glass or sun film",
-    "fine": "Rs. 1,000"
-  },
-  {
-    "code": "016",
-    "name": "Smoke Emission",
-    "description": "Emitting excessive smoke from vehicle",
-    "fine": "Rs. 1,000"
-  },
-  {
-    "code": "017",
-    "name": "Lane Violation",
-    "description": "Not following proper lane discipline",
-    "fine": "Rs. 500"
-  },
-  {
-    "code": "018",
-    "name": "No Insurance",
-    "description": "Vehicle without valid insurance",
-    "fine": "Rs. 2,000"
-  },
-  {
-    "code": "019",
-    "name": "Modified Silencer",
-    "description": "Using modified or noisy silencer",
-    "fine": "Rs. 1,000"
-  },
-  {
-    "code": "020",
-    "name": "Underage Driving",
-    "description": "Person below legal age operating vehicle",
-    "fine": "Rs. 3,000"
-  }
+  { "code": 1, "en": "Exceeding Speed Limit (Motorcycle)", "ur": "مقررہ رفتار کی حد سے تجاوز کرنا (موٹر سائیکل)", "fine": 1000, "cities": ["Punjab", "Islamabad", "Karachi"] },
+  { "code": 1, "en": "Exceeding Speed Limit (LTV)", "ur": "مقررہ رفتار کی حد سے تجاوز کرنا (LTV)", "fine": 1500, "cities": ["Punjab", "Islamabad"] },
+  { "code": 1, "en": "Exceeding Speed Limit (PSV)", "ur": "مقررہ رفتار کی حد سے تجاوز کرنا (PSV)", "fine": 2000, "cities": ["Punjab"] },
+  { "code": 1, "en": "Exceeding Speed Limit (HTV)", "ur": "مقررہ رفتار کی حد سے تجاوز کرنا (HTV)", "fine": 2500, "cities": ["Punjab"] },
+  { "code": 2, "en": "Carrying Excess Passengers", "ur": "مقررہ حد سے زیادہ سواریاں لے جانا", "fine": 1500, "cities": ["Punjab", "Karachi"] },
+  { "code": 3, "en": "Traffic Signal Violation", "ur": "ٹریفک سگنل کی خلاف ورزی", "fine": 1000, "cities": ["All"] },
+  { "code": 4, "en": "Red Light Jump", "ur": "سرخ اشارہ توڑنا", "fine": 2000, "cities": ["All"] },
+  { "code": 5, "en": "Overloading (Public Transport)", "ur": "اوور لوڈنگ (پبلک ٹرانسپورٹ)", "fine": 1000, "cities": ["Punjab", "Karachi"] },
+  { "code": 6, "en": "Allowing Underage Driver", "ur": "کم عمر ڈرائیور کو گاڑی دینا", "fine": 1500, "cities": ["All"] },
+  { "code": 7, "en": "PSV Overloading", "ur": "PSV اوورلوڈنگ", "fine": 2000, "cities": ["Punjab"] },
+  { "code": 8, "en": "Improper Use of Horn", "ur": "غلط ہارن کا استعمال", "fine": 1000, "cities": ["All"] },
+  { "code": 9, "en": "Illegal Parking", "ur": "غلط پارکنگ", "fine": 1000, "cities": ["All"] },
+  { "code": 10, "en": "Double Line Violation", "ur": "دوہری لائن کی خلاف ورزی", "fine": 800, "cities": ["Punjab", "Islamabad"] },
+  { "code": 11, "en": "Lane Change Without Indicator", "ur": "بغیر اشارہ لین بدلنا", "fine": 1500, "cities": ["All"] },
+  { "code": 12, "en": "Hanging Cargo Outside Vehicle", "ur": "سامان باہر لٹکانا", "fine": 2000, "cities": ["Punjab"] },
+  { "code": 13, "en": "Driving Without Lights at Night", "ur": "رات کو بغیر روشنی گاڑی چلانا", "fine": 1500, "cities": ["All"] },
+  { "code": 14, "en": "Wrong Way Driving", "ur": "غلط سمت سے ڈرائیونگ", "fine": 1000, "cities": ["All"] },
+  { "code": 15, "en": "Railway Crossing Violation", "ur": "ریلوے کراسنگ کی خلاف ورزی", "fine": 700, "cities": ["Punjab"] },
+  { "code": 16, "en": "Dangerous Driving", "ur": "خطرناک ڈرائیونگ", "fine": 1500, "cities": ["All"] },
+  { "code": 17, "en": "Causing Road Obstruction", "ur": "سڑک پر رکاوٹ پیدا کرنا", "fine": 1500, "cities": ["All"] },
+  { "code": 18, "en": "Driving Unfit Vehicle", "ur": "ناقص حالت میں گاڑی چلانا", "fine": 1000, "cities": ["All"] },
+  { "code": 19, "en": "Driver Without CNIC", "ur": "ڈرائیور کا شناختی کارڈ نہ ہونا", "fine": 1000, "cities": ["Punjab"] },
+  { "code": 20, "en": "Mobile Phone Use While Driving", "ur": "ڈرائیونگ کے دوران موبائل فون استعمال", "fine": 1000, "cities": ["All"] },
+  { "code": 21, "en": "Incorrect Number Plate", "ur": "غلط نمبر پلیٹ", "fine": 1000, "cities": ["All"] },
+  { "code": 22, "en": "Illegal Siren or Horn", "ur": "غیر قانونی سائرن یا ہارن", "fine": 800, "cities": ["All"] },
+  { "code": 23, "en": "Prohibited U-Turn", "ur": "ممنوعہ یو ٹرن لینا", "fine": 1200, "cities": ["All"] },
+  { "code": 24, "en": "Invalid Driving License", "ur": "غلط یا غیر متعلقہ ڈرائیونگ لائسنس", "fine": 1500, "cities": ["All"] },
+  { "code": 25, "en": "Lights Turned Off While Driving", "ur": "گاڑی کی لائٹس بند رکھنا", "fine": 800, "cities": ["All"] },
+  { "code": 26, "en": "Traffic Obstruction", "ur": "ٹریفک میں رکاوٹ پیدا کرنا", "fine": 2000, "cities": ["All"] },
+  { "code": 27, "en": "Hazardous Material Without Permit", "ur": "خطرناک مواد بغیر اجازت لے جانا", "fine": 800, "cities": ["Punjab"] },
+  { "code": 28, "en": "Riding Without Helmet", "ur": "ہیلمٹ کے بغیر موٹر سائیکل چلانا", "fine": 1000, "cities": ["All"] },
+  { "code": 29, "en": "Driving Without Seat Belt", "ur": "سیٹ بیلٹ کے بغیر ڈرائیونگ", "fine": 1200, "cities": ["All"] },
+  { "code": 30, "en": "Over Speeding in School Zone", "ur": "اسکول زون میں تیز رفتاری", "fine": 800, "cities": ["Punjab", "Islamabad"] },
+  { "code": 31, "en": "Honking in No-Horn Zone", "ur": "جہاں ہارن منع ہو وہاں ہارن بجانا", "fine": 800, "cities": ["All"] },
+  { "code": 32, "en": "Driving Without Safety Equipment", "ur": "حفاظتی آلات کے بغیر گاڑی چلانا", "fine": 800, "cities": ["All"] },
+  { "code": 33, "en": "Triple Riding on Motorcycle", "ur": "موٹر سائیکل پر تین افراد سوار ہونا", "fine": 1000, "cities": ["All"] },
+  { "code": 34, "en": "Non-Standard Silencer", "ur": "غیر معیاری سائلنسر", "fine": 2500, "cities": ["All"] },
+  { "code": 35, "en": "Illegal or Fancy Lights", "ur": "غلط یا غیر قانونی لائٹس", "fine": 2000, "cities": ["All"] },
+  { "code": 36, "en": "Misuse of High Beam", "ur": "ہائی بیم کا غلط استعمال", "fine": 1500, "cities": ["All"] },
+  { "code": 37, "en": "Reckless Overtaking", "ur": "اوورٹیکنگ میں لاپرواہی", "fine": 2500, "cities": ["All"] },
+  { "code": 38, "en": "Driving Without License", "ur": "بغیر لائسنس گاڑی چلانا", "fine": 8000, "cities": ["All"] },
+  { "code": 39, "en": "Driving With Confiscated License", "ur": "ضبط شدہ لائسنس کے باوجود ڈرائیونگ", "fine": 1500, "cities": ["All"] },
+  { "code": 40, "en": "Unregistered Vehicle", "ur": "غیر رجسٹرڈ گاڑی چلانا", "fine": 2000, "cities": ["All"] },
+  { "code": 41, "en": "Vehicle Without Insurance", "ur": "انشورنس کے بغیر موٹر گاڑی", "fine": 1000, "cities": ["Punjab"] },
+  { "code": 42, "en": "Damaged Number Plate", "ur": "خراب یا غیر درست نمبر پلیٹ", "fine": 700, "cities": ["All"] },
+  { "code": 43, "en": "Driving in Emergency Lane", "ur": "ایمرجنسی لین میں ڈرائیونگ", "fine": 1500, "cities": ["Punjab", "Islamabad"] },
+  { "code": 44, "en": "Incorrect Turn", "ur": "غلط موڑ لینا", "fine": 1000, "cities": ["All"] },
+  { "code": 45, "en": "Wrong Lane Usage", "ur": "غلط لین استعمال کرنا", "fine": 1000, "cities": ["All"] },
+  { "code": 46, "en": "Honking in Safety Zone", "ur": "سیفٹی زون میں ہارن بجانا", "fine": 1000, "cities": ["All"] },
+  { "code": 47, "en": "Illegal U-Turn", "ur": "غلط یو ٹرن لینا", "fine": 1000, "cities": ["All"] },
+  { "code": 48, "en": "Disobeying Police Instructions", "ur": "پولیس ہدایات کی خلاف ورزی", "fine": 1500, "cities": ["All"] },
+  { "code": 49, "en": "Vehicle Without Fitness Certificate", "ur": "فٹنس سرٹیفیکیٹ کے بغیر گاڑی", "fine": 1000, "cities": ["Punjab"] },
+  { "code": 50, "en": "Missing CNG/LNG Fitness Certificate", "ur": "CNG/LNG فٹنس سرٹیفیکیٹ نہ ہونا", "fine": 1500, "cities": ["Punjab"] },
+  { "code": 51, "en": "Pressure Horn Usage", "ur": "پریشر ہارن کا استعمال", "fine": 1800, "cities": ["All"] },
+  { "code": 52, "en": "PSV Without Route Permit", "ur": "روٹ پرمٹ کے بغیر PSV", "fine": 1500, "cities": ["Punjab"] },
+  { "code": 53, "en": "Public Service Vehicle Without Permit", "ur": "روٹ پرمٹ کے بغیر پبلک سروس گاڑی", "fine": 1500, "cities": ["Punjab"] },
+  { "code": 54, "en": "Overcharging Passengers", "ur": "مسافروں سے اضافی کرایہ وصول کرنا", "fine": 1000, "cities": ["Punjab"] },
+  { "code": 55, "en": "Improper Seating of Passengers", "ur": "مسافروں کو غلط طریقے سے بٹھانا", "fine": 1500, "cities": ["Punjab"] },
+  { "code": 56, "en": "Repeated Traffic Violations", "ur": "ٹریفک قوانین کی مسلسل خلاف ورزی", "fine": 700, "cities": ["All"] },
+  { "code": 57, "en": "Driver Misconduct", "ur": "ڈرائیور کا غیر مناسب رویہ", "fine": 1500, "cities": ["Punjab"] },
+  { "code": 58, "en": "Serious Mobile Phone Use While Driving", "ur": "ڈرائیونگ کے دوران موبائل فون استعمال (سنگین)", "fine": 2000, "cities": ["All"] },
+  { "code": 59, "en": "Unauthorized Fancy Lights", "ur": "غیر منظور شدہ فینسی لائٹس", "fine": 1000, "cities": ["All"] },
+  { "code": 60, "en": "Improper Hand Signal", "ur": "ہینڈ سگنل کا غلط استعمال", "fine": 500, "cities": ["All"] },
+  { "code": 61, "en": "Unregistered Driving School", "ur": "غیر رجسٹرڈ ڈرائیونگ اسکول", "fine": 5000, "cities": ["Punjab"] },
+  { "code": 62, "en": "Smoke Emitting Vehicle", "ur": "دھواں چھوڑنے والی گاڑی", "fine": 2000, "cities": ["All"] },
+  { "code": 63, "en": "Obstructing Traffic Control", "ur": "ٹریفک کنٹرول میں رکاوٹ", "fine": 1000, "cities": ["All"] },
+  { "code": 64, "en": "Improper Use of Lights", "ur": "غلط لائٹ کا استعمال", "fine": 500, "cities": ["All"] },
+  { "code": 65, "en": "Driving With Suspended License", "ur": "معطل لائسنس کے باوجود ڈرائیونگ", "fine": 3000, "cities": ["All"] },
+  { "code": 66, "en": "Fake or Tampered License", "ur": "جعلی یا تبدیل شدہ لائسنس", "fine": 3000, "cities": ["All"] },
+  { "code": 67, "en": "Violation on Learner Permit", "ur": "ٹیسٹ لائسنس پر خلاف ورزی", "fine": 2000, "cities": ["All"] },
+  { "code": 68, "en": "Non-Standard Number Plate", "ur": "غیر معیاری نمبر پلیٹ", "fine": 3000, "cities": ["All"] },
+  { "code": 69, "en": "One Wheeling", "ur": "ون ویلنگ", "fine": 5000, "cities": ["Punjab"] },
+  { "code": 70, "en": "Driving Despite Physical or Mental Unfitness", "ur": "ذہنی یا جسمانی نااہلی کے باوجود ڈرائیونگ", "fine": 2000, "cities": ["All"] },
+  { "code": 71, "en": "Opening Door Dangerously", "ur": "خطرناک طریقے سے دروازہ کھولنا", "fine": 1000, "cities": ["All"] },
+  { "code": 72, "en": "Vehicle Video Screen Installed", "ur": "گاڑی میں ویڈیو اسکرین / ڈسپلے نصب کرنا", "fine": 1000, "cities": ["All"] },
+  { "code": 73, "en": "Smoking in PSV", "ur": "PSV میں سگریٹ نوشی", "fine": 800, "cities": ["Punjab"] },
+  { "code": 74, "en": "Luggage in Passenger Area (PSV)", "ur": "PSV میں مسافروں کی جگہ سامان رکھنا", "fine": 1000, "cities": ["Punjab"] },
+  { "code": 75, "en": "Child Under 10 on Front Seat", "ur": "10 سال سے کم عمر بچے کو فرنٹ سیٹ پر بٹھانا", "fine": 1200, "cities": ["All"] },
+  { "code": 76, "en": "No Child Safety Arrangement", "ur": "بچے کے لیے حفاظتی انتظام نہ ہونا", "fine": 2000, "cities": ["All"] },
+  { "code": 77, "en": "Parking Too Far From Curb", "ur": "کرب سے زیادہ فاصلے پر پارکنگ", "fine": 500, "cities": ["All"] },
+  { "code": 78, "en": "Parking on Footpath / Sidewalk", "ur": "فٹ پاتھ / سائیڈ واک پر پارکنگ", "fine": 1000, "cities": ["All"] },
+  { "code": 79, "en": "Parking Too Close to Another Vehicle", "ur": "دوسری گاڑی کے بہت قریب پارکنگ", "fine": 500, "cities": ["All"] },
+  { "code": 80, "en": "Parking on Zebra Crossing", "ur": "زیبرا کراسنگ پر پارکنگ", "fine": 1000, "cities": ["All"] },
+  { "code": 81, "en": "Parking Near Fire Hydrant", "ur": "فائر ہائیڈرنٹ کے قریب پارکنگ", "fine": 500, "cities": ["All"] },
+  { "code": 82, "en": "Parking Near Traffic Sign", "ur": "ٹریفک سائن کے قریب پارکنگ", "fine": 500, "cities": ["All"] },
+  { "code": 83, "en": "Parking Near Intersection", "ur": "چوراہے کے قریب پارکنگ", "fine": 500, "cities": ["All"] },
+  { "code": 84, "en": "Parking in No Parking Zone", "ur": "نو پارکنگ زون میں پارکنگ", "fine": 1000, "cities": ["All"] },
+  { "code": 85, "en": "Parking in Front of Entrance", "ur": "داخلی راستے کے سامنے پارکنگ", "fine": 500, "cities": ["All"] },
+  { "code": 86, "en": "Parking at Bus Stop", "ur": "بس اسٹاپ پر پارکنگ", "fine": 500, "cities": ["All"] },
+  { "code": 87, "en": "Parking in Single Lane", "ur": "ایک ہی لین میں پارکنگ", "fine": 500, "cities": ["All"] },
+  { "code": 88, "en": "Parking on Footpath", "ur": "فٹ پاتھ پر پارکنگ", "fine": 1000, "cities": ["All"] }
 ]

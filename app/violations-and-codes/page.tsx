@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 
 interface Violation {
-  code: string;
-  name: string;
-  description: string;
-  fine?: string;
+  code: number;
+  en: string;
+  ur: string;
+  fine: number;
+  cities: string[];
 }
 
 export default function ViolationsAndCodesPage() {
@@ -14,6 +15,7 @@ export default function ViolationsAndCodesPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredViolations, setFilteredViolations] = useState<Violation[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [language, setLanguage] = useState<"en" | "ur">("en");
 
   // Load violations data
   useEffect(() => {
@@ -39,10 +41,11 @@ export default function ViolationsAndCodesPage() {
       const query = searchQuery.toLowerCase();
       const filtered = violations.filter(
         (v) =>
-          v.code.toLowerCase().includes(query) ||
-          v.name.toLowerCase().includes(query) ||
-          v.description.toLowerCase().includes(query) ||
-          (v.fine && v.fine.toLowerCase().includes(query))
+          v.code.toString().includes(query) ||
+          v.en.toLowerCase().includes(query) ||
+          v.ur.includes(query) ||
+          v.fine.toString().includes(query) ||
+          v.cities.some(city => city.toLowerCase().includes(query))
       );
       setFilteredViolations(filtered);
     }
@@ -52,13 +55,39 @@ export default function ViolationsAndCodesPage() {
     <main className="py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Traffic Violations & Codes
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Complete list of traffic violation codes, descriptions, and fines in Pakistan
-          </p>
+        <div className="mb-8 flex justify-between items-start">
+          <div className="flex-1">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Traffic Violations & Codes
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              Complete list of traffic violation codes, descriptions, and fines in Pakistan
+            </p>
+          </div>
+          
+          {/* Language Toggle */}
+          <div className="flex gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+            <button
+              onClick={() => setLanguage("en")}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                language === "en"
+                  ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              English
+            </button>
+            <button
+              onClick={() => setLanguage("ur")}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                language === "ur"
+                  ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              اردو
+            </button>
+          </div>
         </div>
 
         {/* Search Input */}
@@ -93,16 +122,16 @@ export default function ViolationsAndCodesPage() {
                   <thead className="bg-blue-600 text-white">
                     <tr>
                       <th className="px-4 py-3 text-left font-semibold">Code</th>
-                      <th className="px-4 py-3 text-left font-semibold">Violation Name</th>
-                      <th className="px-4 py-3 text-left font-semibold">Description</th>
-                      <th className="px-4 py-3 text-left font-semibold">Common Fine</th>
+                      <th className="px-4 py-3 text-left font-semibold">Violation</th>
+                      <th className="px-4 py-3 text-left font-semibold">Cities</th>
+                      <th className="px-4 py-3 text-left font-semibold">Fine</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredViolations.length > 0 ? (
                       filteredViolations.map((violation, index) => (
                         <tr
-                          key={violation.code}
+                          key={`${violation.code}-${index}`}
                           className={`border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
                             index % 2 === 0 ? "bg-white dark:bg-gray-800" : "bg-gray-50 dark:bg-gray-850"
                           }`}
@@ -112,14 +141,41 @@ export default function ViolationsAndCodesPage() {
                               {violation.code}
                             </span>
                           </td>
-                          <td className="px-4 py-3 font-semibold text-gray-900 dark:text-white">
-                            {violation.name}
+                          <td className="px-4 py-3">
+                            {language === "en" ? (
+                              <>
+                                <div className="font-semibold text-gray-900 dark:text-white mb-1">
+                                  {violation.en}
+                                </div>
+                                <div className="text-sm text-gray-600 dark:text-gray-400" dir="rtl">
+                                  {violation.ur}
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="font-semibold text-gray-900 dark:text-white mb-1" dir="rtl">
+                                  {violation.ur}
+                                </div>
+                                <div className="text-sm text-gray-600 dark:text-gray-400">
+                                  {violation.en}
+                                </div>
+                              </>
+                            )}
                           </td>
-                          <td className="px-4 py-3 text-gray-600 dark:text-gray-400">
-                            {violation.description}
+                          <td className="px-4 py-3">
+                            <div className="flex flex-wrap gap-1">
+                              {violation.cities.map((city) => (
+                                <span
+                                  key={city}
+                                  className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded"
+                                >
+                                  {city}
+                                </span>
+                              ))}
+                            </div>
                           </td>
-                          <td className="px-4 py-3 text-red-600 dark:text-red-400 font-semibold">
-                            {violation.fine || "N/A"}
+                          <td className="px-4 py-3 text-red-600 dark:text-red-400 font-semibold whitespace-nowrap">
+                            Rs. {violation.fine.toLocaleString()}
                           </td>
                         </tr>
                       ))
@@ -138,27 +194,48 @@ export default function ViolationsAndCodesPage() {
             {/* Card View - Mobile */}
             <div className="md:hidden space-y-4">
               {filteredViolations.length > 0 ? (
-                filteredViolations.map((violation) => (
+                filteredViolations.map((violation, index) => (
                   <div
-                    key={violation.code}
+                    key={`${violation.code}-${index}`}
                     className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 border border-gray-200 dark:border-gray-700"
                   >
                     <div className="flex items-center justify-between mb-3">
                       <span className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold px-3 py-1 rounded">
                         {violation.code}
                       </span>
-                      {violation.fine && (
-                        <span className="text-red-600 dark:text-red-400 font-semibold">
-                          {violation.fine}
-                        </span>
-                      )}
+                      <span className="text-red-600 dark:text-red-400 font-semibold text-sm">
+                        Rs. {violation.fine.toLocaleString()}
+                      </span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                      {violation.name}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      {violation.description}
-                    </p>
+                    {language === "en" ? (
+                      <>
+                        <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                          {violation.en}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm mb-3" dir="rtl">
+                          {violation.ur}
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <h3 className="font-semibold text-gray-900 dark:text-white mb-1" dir="rtl">
+                          {violation.ur}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                          {violation.en}
+                        </p>
+                      </>
+                    )}
+                    <div className="flex flex-wrap gap-1">
+                      {violation.cities.map((city) => (
+                        <span
+                          key={city}
+                          className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded"
+                        >
+                          {city}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))
               ) : (

@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 interface Violation {
-  code: string;
-  name: string;
-  description: string;
-  fine?: string;
+  code: number;
+  en: string;
+  ur: string;
+  fine: number;
+  cities: string[];
 }
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
   const [violations, setViolations] = useState<Violation[]>([]);
   const [violationSearch, setViolationSearch] = useState("");
   const [filteredViolations, setFilteredViolations] = useState<Violation[]>([]);
+  const [language, setLanguage] = useState<"en" | "ur">("en");
 
   // Load violations data
   useEffect(() => {
@@ -35,9 +37,9 @@ export default function Home() {
       const query = violationSearch.toLowerCase();
       const filtered = violations.filter(
         (v) =>
-          v.code.toLowerCase().includes(query) ||
-          v.name.toLowerCase().includes(query) ||
-          v.description.toLowerCase().includes(query)
+          v.code.toString().includes(query) ||
+          v.en.toLowerCase().includes(query) ||
+          v.ur.includes(query)
       );
       setFilteredViolations(filtered);
     }
@@ -100,12 +102,40 @@ export default function Home() {
       <section className="py-12 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-              Search Violation Codes
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 text-center">
-              Search by code, name, or description
-            </p>
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex-1">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  Search Violation Codes
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Search by code, name, or description
+                </p>
+              </div>
+              
+              {/* Language Toggle */}
+              <div className="flex gap-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+                <button
+                  onClick={() => setLanguage("en")}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    language === "en"
+                      ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => setLanguage("ur")}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    language === "ur"
+                      ? "bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-400 shadow"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  اردو
+                </button>
+              </div>
+            </div>
             
             {/* Search Input */}
             <div className="mb-6">
@@ -121,29 +151,52 @@ export default function Home() {
             {/* Results */}
             <div className="space-y-4 max-h-96 overflow-y-auto">
               {filteredViolations.length > 0 ? (
-                filteredViolations.map((violation) => (
+                filteredViolations.map((violation, index) => (
                   <div
-                    key={violation.code}
+                    key={`${violation.code}-${index}`}
                     className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
                   >
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                      <div className="flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-2 flex-1">
                         <span className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold px-3 py-1 rounded text-sm">
                           {violation.code}
                         </span>
-                        <h3 className="font-semibold text-gray-900 dark:text-white">
-                          {violation.name}
-                        </h3>
+                        <div className="flex-1">
+                          {language === "en" ? (
+                            <>
+                              <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
+                                {violation.en}
+                              </h3>
+                              <p className="text-gray-600 dark:text-gray-400 text-xs mt-1" dir="rtl">
+                                {violation.ur}
+                              </p>
+                            </>
+                          ) : (
+                            <>
+                              <h3 className="font-semibold text-gray-900 dark:text-white text-sm" dir="rtl">
+                                {violation.ur}
+                              </h3>
+                              <p className="text-gray-600 dark:text-gray-400 text-xs mt-1">
+                                {violation.en}
+                              </p>
+                            </>
+                          )}
+                        </div>
                       </div>
-                      {violation.fine && (
-                        <span className="text-red-600 dark:text-red-400 font-semibold text-sm">
-                          {violation.fine}
-                        </span>
-                      )}
+                      <span className="text-red-600 dark:text-red-400 font-semibold text-sm whitespace-nowrap">
+                        Rs. {violation.fine.toLocaleString()}
+                      </span>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      {violation.description}
-                    </p>
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      {violation.cities.map((city) => (
+                        <span
+                          key={city}
+                          className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded"
+                        >
+                          {city}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))
               ) : (
