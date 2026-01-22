@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     creator: "@mychallanpk",
   },
   verification: {
-    google: "google-site-verification-code",
+    google: "tmWq75hGzkBBxkv-CIweFfOg-mWqM-N2niwuNnGgA44",
   },
   category: "Government Services",
   classification: "Informational",
@@ -76,6 +76,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" content="#2563eb" />
         <meta name="color-scheme" content="light dark" />
+        <meta name="google-site-verification" content="tmWq75hGzkBBxkv-CIweFfOg-mWqM-N2niwuNnGgA44" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-icon.svg" />
         <link rel="manifest" href="/manifest.json" />
