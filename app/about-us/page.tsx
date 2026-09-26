@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us - MyChallan.pk | Pakistan E-Challan Information Portal",
+  title: "About Us - Pakistan E-Challan Information Portal",
   description: "Learn about MyChallan.pk - Your trusted source for e-challan information in Pakistan. We provide comprehensive guides and official links for traffic challan verification.",
   keywords: "about mychallan, e challan pakistan, traffic challan information, pakistan traffic portal, challan guide",
   alternates: {
-    canonical: "https://mychallan.pk/about-us",
+    canonical: "https://mychallan.pk/about-us/",
   },
   openGraph: {
     title: "About Us - MyChallan.pk",
     description: "Your trusted source for e-challan information in Pakistan.",
-    url: "https://mychallan.pk/about-us",
+    url: "https://mychallan.pk/about-us/",
     siteName: "MyChallan.pk",
     type: "website",
     locale: "en_PK",

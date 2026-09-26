@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "Check your Islamabad traffic e-challan online through Islamabad Traffic Police (ITP). View and verify pending traffic challans.",
   keywords: "islamabad e challan, itp challan, islamabad traffic challan, islamabad police challan, itp online services",
   alternates: {
-    canonical: "https://mychallan.pk/islamabad-e-challan",
+    canonical: "https://mychallan.pk/islamabad-e-challan/",
   },
   openGraph: {
     title: "Islamabad E-Challan Check - ITP",
     description: "Check your Islamabad traffic e-challan online through Islamabad Traffic Police.",
-    url: "https://mychallan.pk/islamabad-e-challan",
+    url: "https://mychallan.pk/islamabad-e-challan/",
     siteName: "MyChallan.pk",
     type: "website",
     locale: "en_PK",

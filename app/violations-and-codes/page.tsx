@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import violationsData from "@/public/data/violations.json";
 
 interface Violation {
   code: number;
@@ -10,28 +11,13 @@ interface Violation {
   cities: string[];
 }
 
-export default function ViolationsAndCodesPage() {
-  const [violations, setViolations] = useState<Violation[]>([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredViolations, setFilteredViolations] = useState<Violation[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [language, setLanguage] = useState<"en" | "ur">("en");
+const allViolations = violationsData as Violation[];
 
-  // Load violations data
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("/data/violations.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setViolations(data);
-        setFilteredViolations(data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error loading violations:", err);
-        setIsLoading(false);
-      });
-  }, []);
+export default function ViolationsAndCodesPage() {
+  const [violations] = useState<Violation[]>(allViolations);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredViolations, setFilteredViolations] = useState<Violation[]>(allViolations);
+  const [language, setLanguage] = useState<"en" | "ur">("en");
 
   // Filter violations on search
   useEffect(() => {
@@ -106,16 +92,8 @@ export default function ViolationsAndCodesPage() {
           )}
         </div>
 
-        {/* Loading State */}
-        {isLoading && (
-          <div className="text-center py-12">
-            <p className="text-gray-600 dark:text-gray-400">Loading violations...</p>
-          </div>
-        )}
-
         {/* Table - Desktop View */}
-        {!isLoading && (
-          <>
+        <>
             <div className="hidden md:block bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -247,10 +225,9 @@ export default function ViolationsAndCodesPage() {
               )}
             </div>
           </>
-        )}
 
         {/* Total Count */}
-        {!isLoading && filteredViolations.length > 0 && (
+        {filteredViolations.length > 0 && (
           <div className="mt-6 text-center text-gray-600 dark:text-gray-400">
             <p>
               Total Violations: <span className="font-semibold">{filteredViolations.length}</span>

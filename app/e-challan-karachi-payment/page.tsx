@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "Check and pay your Karachi and Sindh traffic e-challan online through Sindh Police. View pending challans and make payments.",
   keywords: "karachi e challan, sindh challan, karachi traffic challan, sindh police challan, karachi traffic fine payment",
   alternates: {
-    canonical: "https://mychallan.pk/e-challan-karachi-payment",
+    canonical: "https://mychallan.pk/e-challan-karachi-payment/",
   },
   openGraph: {
     title: "Karachi / Sindh E-Challan Check & Payment",
     description: "Check and pay your Karachi and Sindh traffic e-challan online through Sindh Police.",
-    url: "https://mychallan.pk/e-challan-karachi-payment",
+    url: "https://mychallan.pk/e-challan-karachi-payment/",
     siteName: "MyChallan.pk",
     type: "website",
     locale: "en_PK",

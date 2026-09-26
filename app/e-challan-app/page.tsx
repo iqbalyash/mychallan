@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "E-Challan App Pakistan - Verify, Generate PSID and Pay Your Fine | MyChallan.pk",
+  title: "E-Challan App Pakistan - Verify, Generate PSID and Pay Your Fine",
   description: "Download E-Challan App to verify traffic challans, generate PSID, and pay fines online in Pakistan. Complete guide for Punjab, Sindh, and Islamabad e-challan apps.",
   keywords: "e challan app, pakistan challan app, psid generation, challan payment app, traffic fine app pakistan, mobile challan check",
   alternates: {
-    canonical: "https://mychallan.pk/e-challan-app",
+    canonical: "https://mychallan.pk/e-challan-app/",
   },
   openGraph: {
     title: "E-Challan App Pakistan - Verify, Generate PSID and Pay Fine",
     description: "Download E-Challan App to verify traffic challans, generate PSID, and pay fines online.",
-    url: "https://mychallan.pk/e-challan-app",
+    url: "https://mychallan.pk/e-challan-app/",
     siteName: "MyChallan.pk",
     type: "website",
     locale: "en_PK",

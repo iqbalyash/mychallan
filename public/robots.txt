@@ -60,6 +60,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://mychallan.pk/sitemap.xml
-
-# Crawl-delay (minimal for fast indexing)
-Crawl-delay: 0

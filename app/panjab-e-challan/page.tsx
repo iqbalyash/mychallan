@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "Check your Punjab and Lahore traffic e-challan online through PSCA. Search by vehicle number or CNIC to view pending challans.",
   keywords: "punjab e challan, lahore challan, psca challan, punjab traffic challan, lahore traffic fine, psca online",
   alternates: {
-    canonical: "https://mychallan.pk/panjab-e-challan",
+    canonical: "https://mychallan.pk/panjab-e-challan/",
   },
   openGraph: {
     title: "Punjab / Lahore E-Challan Check - PSCA",
     description: "Check your Punjab and Lahore traffic e-challan online through PSCA.",
-    url: "https://mychallan.pk/panjab-e-challan",
+    url: "https://mychallan.pk/panjab-e-challan/",
     siteName: "MyChallan.pk",
     type: "website",
     locale: "en_PK",

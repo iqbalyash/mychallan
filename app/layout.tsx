@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   creator: "MyChallan.pk",
   publisher: "MyChallan.pk",
   applicationName: "MyChallan.pk",
+  metadataBase: new URL("https://mychallan.pk"),
   referrer: "origin-when-cross-origin",
   robots: {
     index: true,
@@ -29,12 +30,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://mychallan.pk",
-    languages: {
-      "en-PK": "https://mychallan.pk",
-      "ur-PK": "https://mychallan.pk",
-      "x-default": "https://mychallan.pk",
-    },
+    canonical: "https://mychallan.pk/",
   },
   openGraph: {
     type: "website",
@@ -80,11 +76,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-icon.svg" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="canonical" href="https://mychallan.pk" />
-        <link rel="alternate" hrefLang="en-PK" href="https://mychallan.pk" />
-        <link rel="alternate" hrefLang="ur-PK" href="https://mychallan.pk" />
-        <link rel="alternate" hrefLang="x-default" href="https://mychallan.pk" />
-        
+
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
