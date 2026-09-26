@@ -1,5 +1,5 @@
-# Netlify Headers Configuration
-# Copy this to your hosting provider's headers configuration
+# Cloudflare Workers and Pages headers
+# Served from the static export in /out
 
 /*
   X-DNS-Prefetch-Control: on

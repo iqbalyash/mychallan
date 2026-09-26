@@ -17,8 +17,8 @@ const nextConfig: NextConfig = {
   // Performance optimizations
   compress: true,
   
-  // Note: Headers should be configured at hosting level (Netlify, Vercel, etc.)
-  // For static export, headers are not applied by Next.js
+  // Headers are applied from public/_headers on Cloudflare Workers and Pages.
+  // Static export does not apply Next.js headers.
 };
 
 export default nextConfig;
